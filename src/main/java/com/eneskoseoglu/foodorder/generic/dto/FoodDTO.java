@@ -8,13 +8,16 @@ import org.antlr.v4.runtime.misc.NotNull;
 @Data
 @SuperBuilder
 public class FoodDTO {
+    private Long id;
     private String name;
     private String description;
     private Double price;
     private String photoUrl;
 
-    public static FoodDTO of(@NotNull Food food ){
-        return FoodDTO.builder().name(food.getName())
+    public static FoodDTO of(@NotNull Food food) {
+        return FoodDTO.builder()
+                .id(food.getId())
+                .name(food.getName())
                 .description(food.getDescription())
                 .price(food.getPrice())
                 .photoUrl(food.getPhotoUrl())
